@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Tax Calculator</h1>
+    <form id="taxForm">
+      <label for="age">Age:</label>
+      <select id="age" name="age">
+        <option value="<40">&lt; 40</option>
+        <option value=">=40&<60">40 - 60</option>
+        <option value=">=60">&ge; 60</option>
+      </select>
+      <label for="income">
+        Gross Annual Income
+        <span class="info-icon" title="Gross annual income is your total salary in a year before deductions">ℹ️</span>
+      </label>
+      <div class="input-with-info">
+        <input type="number" id="income" name="income" required>
+        <span class="info-icon" title="Please enter numbers only">ℹ️</span>
+      </div>
+      
+      <label for="extraIncome">Extra Income:</label>
+      <input type="number" id="extraIncome" name="extraIncome">
+      <label for="deductions">Deductions:</label>
+      <input type="number" id="deductions" name="deductions">
+      <button type="submit" id="calculateBtn">Calculate Tax</button>
+    </form>
+    <div id="errorIcons">
+      <!-- Error icons will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Modal for displaying tax calculation -->
+  <div id="taxModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Tax Calculation</h2>
+      <p id="taxResult"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
